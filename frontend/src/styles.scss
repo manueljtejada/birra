@@ -1,0 +1,37 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+$primary-color: #F9CB0C;
+$secondary-color: #0D6595;
+$gray-light: #e8e8e8;
+
+body {
+  background: #f9f9f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+a {
+  color: $secondary-color;
+  text-decoration: none;
+}
+
+.container {
+  width: 1150px;
+  margin: 20px auto;
+}
+
+.box {
+  background: white;
+  border: 1px solid $gray-light;
+}
+
+.mat-toolbar {
+  background: white;
+  border-bottom: 1px solid $gray-light;
+}
+
+.text-muted {
+  color: #6a6a6a;
+}
