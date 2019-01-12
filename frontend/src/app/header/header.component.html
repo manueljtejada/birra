@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <span>
+    <a routerLink="">
+      <img src="../assets/images/logo.png" height=55 width=55>
+    </a>
+  </span>
+  <span class="spacer"></span>
+  <span>
+    <a mat-button routerLink="inicio" routerLinkActive="active">Top-Rated</a>
+  </span>
+  <span>
+    <a mat-button routerLink="favorites" routerLinkActive="active">Favorites</a>
+  </span>
+  <span>
+    <a mat-button (click)="openLoginDialog()">Login</a>
+  </span>
+</mat-toolbar>
