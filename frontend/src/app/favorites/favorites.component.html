@@ -1,0 +1,16 @@
+<div class="container" fxLayout="column" fxLayoutGap="15px">
+  <h1>Your Favorite Beers</h1>
+  <div class="box" fxFlex="80%">
+    <div *ngIf="!beers">
+      <mat-progress-bar mode="query" color="primary"></mat-progress-bar>
+    </div>
+    <mat-list>
+      <div *ngIf="beers.length === 0">
+        No beers found.
+      </div>
+      <div *ngFor="let beer of beers">
+        <app-beer-list-item [beer]="beer"></app-beer-list-item>
+      </div>
+    </mat-list>
+  </div>
+</div>
