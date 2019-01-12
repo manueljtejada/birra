@@ -1,0 +1,16 @@
+<mat-list-item>
+  <img *ngIf="beer.labels" matListAvatar src="{{beer.labels.medium}}" alt="{{beer.name}}">
+  <img *ngIf="!beer.labels" matListAvatar src="../assets/images/default.png" alt="{{beer.name}}">
+  <h3 [routerLink]="['/beer', beer.id]" matLine>{{beer.nameDisplay}}</h3>
+  <h3 matLine *ngIf="beer.breweries">{{beer.breweries[0].nameShortDisplay}}</h3>
+  <p matLine>
+    <span *ngIf="beer.abv">{{beer.abv}}% </span>
+    <span *ngIf="beer.style">{{beer.style.category.name}}</span>
+  </p>
+  <mat-action-list>
+    <button mat-list-item (click)="save()">
+      <mat-icon [ngClass]="{'saved': saved}">favorite</mat-icon>
+    </button>
+  </mat-action-list>
+</mat-list-item>
+<mat-divider></mat-divider>

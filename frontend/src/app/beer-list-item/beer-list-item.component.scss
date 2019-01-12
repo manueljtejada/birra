@@ -1,0 +1,26 @@
+.mat-list-item:hover {
+  background: #fafafa;
+  cursor: pointer;
+}
+
+h3 {
+  color: #B66D0D;
+  font-size: 1.75rem;
+}
+
+.mat-list-avatar {
+  height: 55px !important;
+  width: 55px !important;
+}
+
+p {
+  color: #666;
+}
+
+.mat-icon {
+  color: lightslategray;
+
+  &.saved {
+    color: #FACB0C;
+  }
+}
