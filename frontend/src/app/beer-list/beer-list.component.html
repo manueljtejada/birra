@@ -1,0 +1,43 @@
+<div class="container" fxLayout="row" fxLayoutGap="15px">
+  <div class="box" fxFlex="20%">
+    <div class="filters">
+      <div class="filters--filter">
+        <div class="filters--title">
+          ABV <small class="text-muted">(Alcohol By Volume)</small>
+        </div>
+        <div class="filters--body">
+          <mat-radio-group [(ngModel)]="selectedAbv" (change)="refetchBeers()">
+            <mat-radio-button *ngFor="let abv of abvs" [value]="abv.value">
+              {{abv.label}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="filters--filter">
+        <div class="filters--title">
+          IBU <small class="text-muted">(Bitterness)</small>
+        </div>
+        <div class="filters--body">
+          <mat-radio-group [(ngModel)]="selectedIbu" (change)="refetchBeers()">
+            <mat-radio-button *ngFor="let ibu of ibus" [value]="ibu.value">
+              {{ibu.label}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box" fxFlex="80%">
+    <div *ngIf="!beers">
+      <mat-progress-bar mode="query" color="primary"></mat-progress-bar>
+    </div>
+    <mat-list>
+      <!-- <div *ngIf="beers.length === 0">
+        No beers found.
+      </div> -->
+      <div *ngFor="let beer of beers">
+        <app-beer-list-item [beer]="beer"></app-beer-list-item>
+      </div>
+    </mat-list>
+  </div>
+</div>
