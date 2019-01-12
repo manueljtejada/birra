@@ -1,0 +1,60 @@
+h1 {
+  margin-top: 0;
+}
+
+.box {
+  padding: 30px 47px;
+}
+
+.beer--avatar {
+  max-width: 100%;
+  height: auto;
+}
+
+.beer--content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  // border-bottom: 1px solid rgb(204, 204, 204);
+
+  &-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: rgb(8, 28, 36);
+  }
+
+  &-description {
+    color: rgb(74, 74, 74);
+    letter-spacing: 0.3px;
+    line-height: 1.38;
+    font-size: 16px;
+    font-weight: 100;
+    padding-right: 30px;
+  }
+
+  &-table {
+    border-bottom: none;
+    font-size: 0.85rem;
+  }
+
+  &-table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid lightgray;
+
+    div:first-child {
+      color: gray;
+    }
+  }
+}
+
+.mat-icon {
+  color: lightslategray;
+
+  &.saved {
+    color: #FACB0C;
+  }
+}
