@@ -23,12 +23,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { BeerListItemComponent } from './beer-list-item/beer-list-item.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BeerService } from './services/beer.service';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { HeaderComponent } from './header/header.component';
-import { FiltersComponent } from './filters/filters.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { LoginComponent } from './login/login.component';
 
@@ -42,11 +40,9 @@ import { environment } from '../environments/environment';
     AppComponent,
     BeerListComponent,
     BeerListItemComponent,
-    SearchBarComponent,
     HomePageComponent,
     BeerDetailComponent,
     HeaderComponent,
-    FiltersComponent,
     FavoritesComponent,
     LoginComponent
   ],
