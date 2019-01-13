@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BeerService } from '../services/beer.service';
+import { Beer } from '../Beer';
 
 const abvs = [
   { label: 'Less than 4%', value: '-3' },
@@ -23,11 +24,11 @@ const ibus = [
   styleUrls: ['./beer-list.component.scss']
 })
 export class BeerListComponent implements OnInit {
-  beers: Array<any>;
+  beers: Array<Beer>;
   abvs = abvs;
   ibus = ibus;
-  selectedAbv = '+1';
-  selectedIbu = '+1';
+  selectedAbv = '0,25';
+  selectedIbu = '0,100';
   filters;
 
   constructor(private beerService: BeerService) { }
