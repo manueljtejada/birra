@@ -41,8 +41,6 @@ export class BeerService {
       this.savedBeers.push(beer);
     }
 
-    console.log(this.savedBeers);
-
     localStorage.setItem('birra_saved_beers', JSON.stringify(this.savedBeers));
     return of(this.savedBeers);
   }
