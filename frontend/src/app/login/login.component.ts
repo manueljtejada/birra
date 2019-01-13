@@ -13,6 +13,11 @@ export class LoginComponent implements OnInit {
   errorMessage: string;
   successMessage: string;
 
+  state = {
+    login: true,
+    register: false,
+  };
+
   constructor(public auth: LoginService, public dialogRef: MatDialogRef<LoginComponent>, private fb: FormBuilder) {
     this.createForm();
   }
@@ -27,12 +32,30 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleLoginRegister() {
+    this.state.login = !this.state.login;
+    this.state.register = !this.state.register;
+  }
+
+  tryLogin(value) {
+    this.auth.doLogin(value)
+      .then(res => {
+        console.log(res);
+        this.dialogRef.close();
+      }, err => {
+        console.log(err);
+        this.errorMessage = err.message;
+      });
+  }
+
   tryRegister(value) {
     this.auth.doRegister(value)
       .then(res => {
         console.log(res);
         this.errorMessage = '';
         this.successMessage = 'Your account has been created';
+
+        this.toggleLoginRegister();
       }, err => {
         console.log(err);
         this.errorMessage = err.message;

@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
-  Login
+  <span *ngIf="state.login">Login</span>
+  <span *ngIf="state.register">Register</span>
   <span class="flex-spacer"></span>
   <button mat-button mat-dialog-close>&times;</button>
 </mat-toolbar>
@@ -17,6 +18,14 @@
       <label class="error">{{errorMessage}}</label>
       <label class="success">{{successMessage}}</label>
     </div>
-    <button type="submit" (click)="tryRegister(registerForm.value)">Register</button>
+    <button type="submit" (click)="state.login ? tryLogin(registerForm.value) : tryRegister(registerForm.value)">
+      {{state.login ? 'Login' : 'Register'}}
+    </button>
+    <div>
+      <a (click)="toggleLoginRegister()">
+        <span *ngIf="state.login">Don't have an account? Click here to register</span>
+        <span *ngIf="state.register">Already have an account? Click here to log in</span>
+      </a>
+    </div>
   </mat-dialog-content>
 </form>
