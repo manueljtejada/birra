@@ -6,12 +6,13 @@
   </span>
   <span class="spacer"></span>
   <span>
-    <a mat-button routerLink="inicio" routerLinkActive="active">Top-Rated</a>
+    <a mat-button routerLink="" routerLinkActive="active">Top-Rated Beers</a>
   </span>
   <span>
-    <a mat-button routerLink="favorites" routerLinkActive="active">Favorites</a>
+    <a mat-button routerLink="favorites" routerLinkActive="active">My Favorite Beers</a>
   </span>
   <span>
-    <a mat-button (click)="openLoginDialog()">Login</a>
+    <a *ngIf="!user" mat-button (click)="openLoginDialog()">Login</a>
+    <a *ngIf="user" mat-button (click)="doLogout()">Log Out</a>
   </span>
 </mat-toolbar>
