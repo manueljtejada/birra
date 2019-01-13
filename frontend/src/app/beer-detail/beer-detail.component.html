@@ -57,15 +57,15 @@
           </div>
           <div class="beer--content-table-row">
             <div>Availability</div>
-            <div>{{beer.available.name || "Unknown"}}</div>
+            <div>{{beer.available ? beer.available.name : "Unknown"}}</div>
           </div>
           <div class="beer--content-table-row">
             <div>Glassware</div>
-            <div>{{beer.glass.name || "Unknown"}}</div>
+            <div>{{beer.glass ? beer.glass.name : "Unknown"}}</div>
           </div>
           <div class="beer--content-table-row">
             <div>Recommended Temperature</div>
-            <div>{{beer.servingTemperature || "Unknown"}}</div>
+            <div>{{beer.servingTemperature  || "Unknown"}}</div>
           </div>
           <div class="beer--content-table-row">
             <div>Certified Organic?</div>

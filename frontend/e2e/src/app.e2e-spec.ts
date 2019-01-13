@@ -7,8 +7,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should navigate to favorites page', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to birra!');
+    const navlink = page.getAllElements('a').get(2);
+    navlink.click();
+    expect(page.getTitleText()).toBe('Your Favorite Beers');
   });
 });
